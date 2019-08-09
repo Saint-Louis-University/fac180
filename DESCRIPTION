@@ -1,0 +1,16 @@
+Package: fac180
+Title: R bindings for Faculty180
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matthew",
+           family = "Schuelke",
+           role = c("aut", "cre"),
+           email = "matthew.schuelke@slu.edu",
+           comment = c(ORCID = "0000-0001-5755-1725"))
+Description: R bindings for Faculty180
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    httr
+RoxygenNote: 6.1.1
