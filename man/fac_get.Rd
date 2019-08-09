@@ -14,6 +14,9 @@ fac_get(request_string, query = list(),
 
 \item{credentials}{function - returns named list of credentials. See \code{\link{fac_credentials}}}
 }
+\value{
+a \code{\link[httr]{response}} object
+}
 \description{
 Base function to perform any HMAC GET request.
 }

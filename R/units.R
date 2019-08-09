@@ -1,7 +1,5 @@
 #' Units
 #'
-#' @name units
-#'
 #' @description Retrieve academic units within your institution.
 #'
 #' @param unitid string: comma separated vector of integers - retrieve units with specific ids.
@@ -12,7 +10,6 @@
 #' @param depth integer - how deep to recurse down the unit tree to find subunits
 #'
 #' @return a \code{\link[httr]{response}} object
-#' @export
 #'
 #' @examples
 #' ## retrieve a summary listing of the first 3 academic units
@@ -21,9 +18,12 @@
 #'
 #' ## retrieve detailed data on the first academic unit
 #' response <- fac_get_unit(1, "detailed")
-#' content(response)
+#' httr::content(response)
+#'
+#' @name units
 NULL
 
+#' @export
 #' @rdname units
 fac_get_units <- function(unitid,
                           data = c("count", "summary", "detailed"),
@@ -34,6 +34,7 @@ fac_get_units <- function(unitid,
   fac_get("/units", as.list(match.call())[-1])
 }
 
+#' @export
 #' @rdname units
 fac_get_unit <- function(unitid,
                          data = c("count", "summary", "detailed"),

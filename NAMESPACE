@@ -2,4 +2,5 @@
 
 export(fac_credentials)
 export(fac_get)
-export(units)
+export(fac_get_unit)
+export(fac_get_units)

@@ -38,5 +38,6 @@ httr::content(response)
 
 ## retrieve detailed data on the first academic unit
 response <- fac_get_unit(1, "detailed")
-content(response)
+httr::content(response)
+
 }

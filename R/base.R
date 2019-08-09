@@ -30,7 +30,7 @@ fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
 #' @param query named list - passed to \code{\link[httr]{modify_url}} to build query strings
 #' @param credentials function - returns named list of credentials. See \code{\link{fac_credentials}}
 #'
-#' @return
+#' @return a \code{\link[httr]{response}} object
 #' @export
 #'
 #' @examples
