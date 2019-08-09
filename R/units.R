@@ -12,7 +12,6 @@
 #' @param depth integer - how deep to recurse down the unit tree to find subunits
 #'
 #' @return a \code{\link[httr]{response}} object
-#' @export
 #'
 #' @examples
 #' ## retrieve a summary listing of the first 3 academic units
@@ -25,6 +24,7 @@
 NULL
 
 #' @rdname units
+#' @export
 fac_get_units <- function(unitid,
                           data = c("count", "summary", "detailed"),
                           q,
@@ -35,6 +35,7 @@ fac_get_units <- function(unitid,
 }
 
 #' @rdname units
+#' @export
 fac_get_unit <- function(unitid,
                          data = c("count", "summary", "detailed"),
                          q,
