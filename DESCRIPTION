@@ -14,3 +14,5 @@ LazyData: true
 Imports: 
     httr
 RoxygenNote: 6.1.1
+URL: https://github.com/Saint-Louis-University/fac180
+BugReports: https://github.com/Saint-Louis-University/fac180/issues
