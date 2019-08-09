@@ -25,6 +25,7 @@ NULL
 
 #' @export
 #' @rdname units
+#' @export
 fac_get_units <- function(unitid,
                           data = c("count", "summary", "detailed"),
                           q,
@@ -36,6 +37,7 @@ fac_get_units <- function(unitid,
 
 #' @export
 #' @rdname units
+#' @export
 fac_get_unit <- function(unitid,
                          data = c("count", "summary", "detailed"),
                          q,
