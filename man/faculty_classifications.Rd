@@ -4,7 +4,7 @@
 \alias{faculty_classifications}
 \alias{fac_get_faculty_classification_data}
 \alias{fac_get_faculty_classifications}
-\alias{fac_get_faculty_classification}
+\alias{fac_get_faculty_classification_class}
 \title{Faculty Classifications}
 \usage{
 fac_get_faculty_classification_data(userlist, facultyclassificationlist,
@@ -14,8 +14,8 @@ fac_get_faculty_classification_data(userlist, facultyclassificationlist,
 fac_get_faculty_classifications(unitid, data = c("count", "summary",
   "detailed"), q, limit, offset, ...)
 
-fac_get_faculty_classification(facultyclassificationid, data = c("count",
-  "summary", "detailed"), q, limit, offset)
+fac_get_faculty_classification_class(facultyclassificationid,
+  data = c("count", "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
 \item{userlist}{string: comma separated vector of users - limits the bulk GET to the users in the list.}

@@ -57,11 +57,12 @@ fac_get_faculty_classifications <- function(unitid,
 
 #' @rdname faculty_classifications
 #' @export
-fac_get_faculty_classification <- function(facultyclassificationid,
-                                           data = c("count", "summary", "detailed"),
-                                           q,
-                                           limit,
-                                           offset) {
+fac_get_faculty_classification_class <- function(facultyclassificationid,
+                                                 data = c("count", "summary", "detailed"),
+                                                 q,
+                                                 limit,
+                                                 offset,
+                                                 ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
   query <- args[c("data", "q", "limit", "offset")]
   fac_get(paste0("/facultyclassifications/-", facultyclassificationid), query, ...)
