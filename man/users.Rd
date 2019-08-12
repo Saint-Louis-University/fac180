@@ -24,13 +24,13 @@ fac_get_user(userid, data = c("count", "summary", "detailed"),
 
 \item{employmentstatus}{string - users are filtered by their employment status.}
 
-\item{data}{string - optional - determine the extent of data that will be returned.}
+\item{data}{string - determine the extent of data that will be returned.}
 
-\item{q}{string - optional - search term. Use '*' as wildcard.}
+\item{q}{string - search term. Use '*' as wildcard.}
 
-\item{limit}{integer - optional - limit query to specified number of records.}
+\item{limit}{integer - limit query to specified number of records.}
 
-\item{offset}{integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
@@ -45,5 +45,19 @@ a \code{\link[httr]{response}} object
 Create, update, and retreive details of users.
 }
 \examples{
-## TODO
+## get count of users
+r <- fac_get_users()
+content(r)
+
+## get details of users in unit 3
+r <- fac_get_users(unitid = "3", data = "detailed")
+content(r)
+
+## get summary of all full time in units 3 and 4
+r <- fac_get_users(unitid = "3,4", employmentstatus = "Full Time", data = "summary")
+content(r)
+
+## get summary of user "000315149"
+r <- fac_get_user(userid = "000315149", data = "summary")
+content(r)
 }

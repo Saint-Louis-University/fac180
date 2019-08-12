@@ -15,13 +15,13 @@ fac_get_unit(unitid, data = c("count", "summary", "detailed"), q, limit,
 \arguments{
 \item{unitid}{string: comma separated vector of integers - retrieve units with specific ids.}
 
-\item{data}{string - optional - determine the extent of data that will be returned.}
+\item{data}{string - determine the extent of data that will be returned.}
 
-\item{q}{string - optional - search term. Use '*' as wildcard.}
+\item{q}{string - search term. Use '*' as wildcard.}
 
-\item{limit}{integer - optional - limit query to specified number of records.}
+\item{limit}{integer - limit query to specified number of records.}
 
-\item{offset}{integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{depth}{integer - how deep to recurse down the unit tree to find subunits}
 
@@ -35,11 +35,11 @@ Retrieve academic units within your institution.
 }
 \examples{
 ## retrieve a summary listing of the first 3 academic units
-response <- fac_get_units(data = "summary", limit = 3)
-content(response)
+r <- fac_get_units(data = "summary", limit = 3)
+content(r)
 
 ## retrieve detailed data on the first academic unit
-response <- fac_get_unit(1, "detailed")
-content(response)
+r <- fac_get_unit(unitid = "1", data = "detailed")
+content(r)
 
 }

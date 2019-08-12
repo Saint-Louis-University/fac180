@@ -11,7 +11,21 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## TODO
+#' ## get count of users
+#' r <- fac_get_users()
+#' content(r)
+#'
+#' ## get details of users in unit 3
+#' r <- fac_get_users(unitid = "3", data = "detailed")
+#' content(r)
+#'
+#' ## get summary of all full time in units 3 and 4
+#' r <- fac_get_users(unitid = "3,4", employmentstatus = "Full Time", data = "summary")
+#' content(r)
+#'
+#' ## get summary of user "000315149"
+#' r <- fac_get_user(userid = "000315149", data = "summary")
+#' content(r)
 #' @name users
 NULL
 

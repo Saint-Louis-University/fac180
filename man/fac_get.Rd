@@ -11,19 +11,19 @@ fac_get(request_string, query = list(), ...,
 \arguments{
 \item{request_string}{string - api endpoint to call}
 
-\item{query}{named list - optional - passed to \code{\link[httr]{modify_url}} to build query strings}
+\item{query}{named list - passed to \code{\link[httr]{modify_url}} to build query strings}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
 \item{credentials}{function - returns named list of credentials. See \code{\link{fac_credentials}}}
 
-\item{data}{string - optional - determine the extent of data that will be returned.}
+\item{data}{string - determine the extent of data that will be returned.}
 
-\item{q}{string - optional - search term. Use '*' as wildcard.}
+\item{q}{string - search term. Use '*' as wildcard.}
 
-\item{limit}{integer - optional - limit query to specified number of records.}
+\item{limit}{integer - limit query to specified number of records.}
 
-\item{offset}{integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 }
 \value{
 a \code{\link[httr]{response}} object

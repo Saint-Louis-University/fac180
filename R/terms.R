@@ -9,9 +9,13 @@
 #' @export
 #'
 #' @examples
+#' ## get summary information for one term
+#' r <- fac_get_terms(yearlist = "2019", data = "summary")
+#' content(r)
+#'
 #' ## get detailed information for two terms
-#' response <- fac_get_terms("2018,2019", "detailed")
-#' content(response)
+#' r <- fac_get_terms(yearlist = "2018,2019", data = "detailed")
+#' content(r)
 fac_get_terms <- function(yearlist,
                           data = c("count", "summary", "detailed"),
                           q,

@@ -31,13 +31,13 @@ fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
 #' @description Base function to perform any HMAC GET request.
 #'
 #' @param request_string string - api endpoint to call
-#' @param query named list - optional - passed to \code{\link[httr]{modify_url}} to build query strings
+#' @param query named list - passed to \code{\link[httr]{modify_url}} to build query strings
 #' @param ... additional arguments passed to \code{\link[httr]{GET}}.
 #' @param credentials function - returns named list of credentials. See \code{\link{fac_credentials}}
-#' @param data string - optional - determine the extent of data that will be returned.
-#' @param q string - optional - search term. Use '*' as wildcard.
-#' @param limit integer - optional - limit query to specified number of records.
-#' @param offset integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.
+#' @param data string - determine the extent of data that will be returned.
+#' @param q string - search term. Use '*' as wildcard.
+#' @param limit integer - limit query to specified number of records.
+#' @param offset integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.
 #'
 #' @return a \code{\link[httr]{response}} object
 fac_get <- function(request_string,

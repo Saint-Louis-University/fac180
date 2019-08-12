@@ -10,12 +10,12 @@
 #'
 #' @examples
 #' ## retrieve a summary listing of the first 3 academic units
-#' response <- fac_get_units(data = "summary", limit = 3)
-#' content(response)
+#' r <- fac_get_units(data = "summary", limit = 3)
+#' content(r)
 #'
 #' ## retrieve detailed data on the first academic unit
-#' response <- fac_get_unit(1, "detailed")
-#' content(response)
+#' r <- fac_get_unit(unitid = "1", data = "detailed")
+#' content(r)
 #'
 #' @name units
 NULL
