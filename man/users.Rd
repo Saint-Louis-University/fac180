@@ -10,14 +10,14 @@ fac_get_users(unitid, employmentstatus = c("All", "Full Time",
   "Part Time", "Staff", "Inactive", "All Active"), data = c("count",
   "summary", "detailed"), q, limit, offset, ...)
 
-fac_get_user(userid, data = c("count", "summary", "detailed"),
-  extra = c("accounttype", "suffix", "honorific", "officebuilding",
-  "officenumber", "phone", "gender", "race", "nationality", "homephone",
-  "homestreet1", "homestreet2", "homecity", "homestate", "homezipcode",
-  "cellphone", "teachinginterest", "researchinterest", "rankname",
-  "biography", "emergencycontact", "emergencycontactphone", "pager",
-  "personalstreet1", "personalstreet2", "personalcity", "personalstate",
-  "personalzip", "url"), q, limit, offset, ...)
+fac_get_user(userid, extra = c("accounttype", "suffix", "honorific",
+  "officebuilding", "officenumber", "phone", "gender", "race",
+  "nationality", "homephone", "homestreet1", "homestreet2", "homecity",
+  "homestate", "homezipcode", "cellphone", "teachinginterest",
+  "researchinterest", "rankname", "biography", "emergencycontact",
+  "emergencycontactphone", "pager", "personalstreet1", "personalstreet2",
+  "personalcity", "personalstate", "personalzip", "url"),
+  data = c("count", "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
 \item{unitid}{string: comma separated vector of integers - retrieve users in units with specific ids.}
@@ -57,12 +57,8 @@ content(r)
 r <- fac_get_users(unitid = "3,4", employmentstatus = "Full Time", data = "summary")
 content(r)
 
-<<<<<<< HEAD
 ## get summary of user "000187846"
 r <- fac_get_user(userid = "000187846", data = "summary")
-=======
-## get summary of user "000315149"
-r <- fac_get_user(userid = "000315149", data = "summary")
->>>>>>> d2ca1ef14f22f4b27ba9059522299629b67558d7
 content(r)
+
 }

@@ -7,10 +7,10 @@
 \title{Permissions}
 \usage{
 fac_get_users_permissions(userlist, rights = c("1,2", "1", "2"), unitid,
-  data, q, limit, offset, ...)
+  data = c("count", "summary", "detailed"), q, limit, offset, ...)
 
-fac_get_user_permissions(userid, rights, unitid, data, q, limit, offset,
-  ...)
+fac_get_user_permissions(userid, rights, unitid, data = c("count",
+  "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
 \item{userlist}{string: comma separated vector of users - limits the bulk GET to the users in the list.}
@@ -38,7 +38,6 @@ a \code{\link[httr]{response}} object
 Retrieve details of users' permissions.
 }
 \examples{
-<<<<<<< HEAD
 ## get count of users with full admin rights
 r <- fac_get_users_permissions(rights = "1")
 content(r)
@@ -47,7 +46,5 @@ content(r)
 # need ask interfolio
 #r <- fac_get_user_permissions(userid = "000187846")
 #content(r)
-=======
-## TODO
->>>>>>> d2ca1ef14f22f4b27ba9059522299629b67558d7
+
 }

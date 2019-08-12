@@ -44,7 +44,7 @@ fac_get <- function(request_string,
                     query = list(),
                     ...,
                     credentials = fac_credentials(),
-                    data = c("detailed", "summary", "count"),
+                    data = c("count", "summary", "detailed"),
                     q,
                     limit,
                     offset) {

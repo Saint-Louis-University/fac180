@@ -30,7 +30,8 @@ fac_get_units <- function(unitid,
                           depth,
                           ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "data", "q", "limit", "offset", "depth")]
+  query <- args[c("unitid", "depth",
+                  "data", "q", "limit", "offset")]
   fac_get("/units", query, ...)
 }
 
@@ -43,6 +44,7 @@ fac_get_unit <- function(unitid,
                          offset,
                          ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "data", "q", "limit", "offset", "depth")]
+  query <- args[c("unitid", "depth",
+                  "data", "q", "limit", "offset")]
   fac_get(paste0("/units/", unitid), query, ...)
 }
