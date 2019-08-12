@@ -1,3 +1,7 @@
+#' @importFrom httr content
+#' @export
+httr::content
+
 #' Faculty180 API Credentials
 #'
 #' @description Helper function to retrieve HMAC credentials.
@@ -27,26 +31,31 @@ fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
 #' @description Base function to perform any HMAC GET request.
 #'
 #' @param request_string string - api endpoint to call
-#' @param query named list - passed to \code{\link[httr]{modify_url}} to build query strings
+#' @param query named list - optional - passed to \code{\link[httr]{modify_url}} to build query strings
+#' @param ... additional arguments passed to \code{\link[httr]{GET}}.
 #' @param credentials function - returns named list of credentials. See \code{\link{fac_credentials}}
+#' @param data string - optional - determine the extent of data that will be returned.
+#' @param q string - optional - search term. Use '*' as wildcard.
+#' @param limit integer - optional - limit query to specified number of records.
+#' @param offset integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.
 #'
 #' @return a \code{\link[httr]{response}} object
-#' @export
-#'
-#' @examples
-#' response <- fac_get("/units")
-#' httr::content(response)
 fac_get <- function(request_string,
                     query = list(),
-                    credentials = fac_credentials()) {
+                    ...,
+                    credentials = fac_credentials(),
+                    data = c("detailed", "summary", "count"),
+                    q,
+                    limit,
+                    offset) {
   request_verb <- "GET"
   timestamp_string <- format(as.POSIXlt(Sys.time(), "UTC"), "%Y-%m-%d %H:%M:%S")
   verb_request_string <- paste(request_verb, "\n",  timestamp_string, request_string, sep = "\n")
   signed_hash <- httr::hmac_sha1(credentials$private_key, verb_request_string)
-  authorization_header = paste0("INTF ", credentials$public_key, ":", signed_hash)
+  authorization_header <- paste0("INTF ", credentials$public_key, ":", signed_hash)
   url <- paste0(credentials$host, request_string)
   config <- httr::add_headers("TimeStamp" = timestamp_string,
                               "Authorization" = authorization_header,
                               "INTF-DatabaseID" = credentials$database_id)
-  httr::GET(url, config, query = query)
+  httr::GET(url, config, query = query, ...)
 }

@@ -7,23 +7,25 @@
 \title{Units}
 \usage{
 fac_get_units(unitid, data = c("count", "summary", "detailed"), q, limit,
-  offset, depth)
+  offset, depth, ...)
 
 fac_get_unit(unitid, data = c("count", "summary", "detailed"), q, limit,
-  offset)
+  offset, ...)
 }
 \arguments{
 \item{unitid}{string: comma separated vector of integers - retrieve units with specific ids.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string - optional - determine the extent of data that will be returned.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string - optional - search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer - optional - limit query to specified number of records.}
 
-\item{offset}{integer - used to offset queries that are segmented into chunks with limit.}
+\item{offset}{integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{depth}{integer - how deep to recurse down the unit tree to find subunits}
+
+\item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 }
 \value{
 a \code{\link[httr]{response}} object
@@ -34,10 +36,10 @@ Retrieve academic units within your institution.
 \examples{
 ## retrieve a summary listing of the first 3 academic units
 response <- fac_get_units(data = "summary", limit = 3)
-httr::content(response)
+content(response)
 
 ## retrieve detailed data on the first academic unit
 response <- fac_get_unit(1, "detailed")
-httr::content(response)
+content(response)
 
 }

@@ -5,18 +5,20 @@
 \title{Terms}
 \usage{
 fac_get_terms(yearlist, data = c("count", "summary", "detailed"), q,
-  limit, offset)
+  limit, offset, ...)
 }
 \arguments{
 \item{yearlist}{string: comma separated vector of integers - retrieve a term by year.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string - optional - determine the extent of data that will be returned.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string - optional - search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer - optional - limit query to specified number of records.}
 
-\item{offset}{integer - used to offset queries that are segmented into chunks with limit.}
+\item{offset}{integer - optional - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+
+\item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 }
 \value{
 a \code{\link[httr]{response}} object
@@ -27,5 +29,5 @@ Retrieve academic terms within your institution.
 \examples{
 ## get detailed information for two terms
 response <- fac_get_terms("2018,2019", "detailed")
-httr::content(response)
+content(response)
 }
