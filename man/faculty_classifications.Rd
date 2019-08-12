@@ -55,4 +55,12 @@ content(r)
 r <- fac_get_faculty_classifications()
 content(r)
 
+## get details on faculty classification class 1
+r <- fac_get_faculty_classification_class(facultyclassificationid = 1, data = "detailed")
+content(r)
+
+## get details on faculty classification class 1
+r <- fac_get_faculty_classification_class(facultyclassificationid = 2, data = "detailed")
+content(r)
+
 }
