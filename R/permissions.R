@@ -28,13 +28,14 @@ NULL
 fac_get_users_permissions <- function(userlist,
                                       rights = c("1,2", "1", "2"),
                                       unitid,
-                                      data,
+                                      data = c("count", "summary", "detailed"),
                                       q,
                                       limit,
                                       offset,
                                       ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("userlist", "rights", "unitid", "data", "q", "limit", "offset")]
+  query <- args[c("userlist", "rights", "unitid",
+                  "data", "q", "limit", "offset")]
   fac_get("/users/permissions", query, ...)
 }
 
@@ -43,12 +44,13 @@ fac_get_users_permissions <- function(userlist,
 fac_get_user_permissions <- function(userid,
                                      rights,
                                      unitid,
-                                     data,
+                                     data = c("count", "summary", "detailed"),
                                      q,
                                      limit,
                                      offset,
                                      ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("rights", "unitid", "data", "q", "limit", "offset")]
+  query <- args[c("rights", "unitid",
+                  "data", "q", "limit", "offset")]
   fac_get(paste0("/users/permissions/", userid), query, ...)
 }

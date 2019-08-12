@@ -23,6 +23,7 @@ fac_get_terms <- function(yearlist,
                           offset,
                           ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("yearlist", "data", "q", "limit", "offset")]
+  query <- args[c("yearlist",
+                  "data", "q", "limit", "offset")]
   fac_get("/terms", query, ...)
 }

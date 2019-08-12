@@ -5,8 +5,8 @@
 \title{Faculty180 GET}
 \usage{
 fac_get(request_string, query = list(), ...,
-  credentials = fac_credentials(), data = c("detailed", "summary",
-  "count"), q, limit, offset)
+  credentials = fac_credentials(), data = c("count", "summary",
+  "detailed"), q, limit, offset)
 }
 \arguments{
 \item{request_string}{string - api endpoint to call}
