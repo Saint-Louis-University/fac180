@@ -9,7 +9,13 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' git er done
+#' ## get detailed information on unit 1
+#' r <- fac_get_sections(unitid = 1, data = "detailed")
+#' content(r)
+#'
+#' # get detailed information on section 7
+#' r <- fac_get_section(sectionid = 7, data = "detailed")
+#' content(r)
 #'
 #' @name sections
 NULL
