@@ -4,6 +4,7 @@
 \alias{faculty_classifications}
 \alias{fac_get_faculty_classification_data}
 \alias{fac_get_faculty_classifications}
+\alias{fac_get_faculty_classification}
 \title{Faculty Classifications}
 \usage{
 fac_get_faculty_classification_data(userlist, facultyclassificationlist,
@@ -12,6 +13,9 @@ fac_get_faculty_classification_data(userlist, facultyclassificationlist,
 
 fac_get_faculty_classifications(unitid, data = c("count", "summary",
   "detailed"), q, limit, offset, ...)
+
+fac_get_faculty_classification(facultyclassificationid, data = c("count",
+  "summary", "detailed"), q, limit, offset)
 }
 \arguments{
 \item{userlist}{string: comma separated vector of users - limits the bulk GET to the users in the list.}
@@ -33,6 +37,8 @@ fac_get_faculty_classifications(unitid, data = c("count", "summary",
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
 \item{unitid}{string - filter classifications to the specified unit.}
+
+\item{facultyclassificationid}{integer - specific faculty classification.}
 }
 \value{
 a \code{\link[httr]{response}} object

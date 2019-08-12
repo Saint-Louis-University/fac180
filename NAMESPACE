@@ -2,6 +2,7 @@
 
 export(content)
 export(fac_credentials)
+export(fac_get_faculty_classification)
 export(fac_get_faculty_classification_data)
 export(fac_get_faculty_classifications)
 export(fac_get_terms)
