@@ -19,6 +19,7 @@
 #' # need ask interfolio
 #' #r <- fac_get_user_permissions(userid = "000187846")
 #' #content(r)
+#'
 #' @name permissions
 NULL
 

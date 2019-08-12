@@ -38,6 +38,7 @@ a \code{\link[httr]{response}} object
 Retrieve details of users' permissions.
 }
 \examples{
+<<<<<<< HEAD
 ## get count of users with full admin rights
 r <- fac_get_users_permissions(rights = "1")
 content(r)
@@ -46,4 +47,7 @@ content(r)
 # need ask interfolio
 #r <- fac_get_user_permissions(userid = "000187846")
 #content(r)
+=======
+## TODO
+>>>>>>> d2ca1ef14f22f4b27ba9059522299629b67558d7
 }

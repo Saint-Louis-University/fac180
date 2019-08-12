@@ -23,8 +23,13 @@
 #' r <- fac_get_users(unitid = "3,4", employmentstatus = "Full Time", data = "summary")
 #' content(r)
 #'
+<<<<<<< HEAD
 #' ## get summary of user "000187846"
 #' r <- fac_get_user(userid = "000187846", data = "summary")
+=======
+#' ## get summary of user "000315149"
+#' r <- fac_get_user(userid = "000315149", data = "summary")
+>>>>>>> d2ca1ef14f22f4b27ba9059522299629b67558d7
 #' content(r)
 #' @name users
 NULL
