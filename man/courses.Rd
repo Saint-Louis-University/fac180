@@ -9,20 +9,22 @@
 \alias{fac_get_courses_taught_id_attachment}
 \title{Courses}
 \usage{
-fac_get_course_prefixes(unitid, data, q, limit, offset, ...)
+fac_get_course_prefixes(unitid, data = c("count", "summary", "detailed"),
+  q, limit, offset, ...)
 
 fac_get_courses(prefixes, extra = c("title", "description",
   "credithours", "lecturehours", "labhours", "extrahours",
-  "extrahourslabel", "courselevel", "cipcode"), data, q, limit, offset,
-  ...)
+  "extrahourslabel", "courselevel", "cipcode"), data = c("count",
+  "summary", "detailed"), q, limit, offset, ...)
 
-fac_get_courses_taught(termid, userlist, data, q, limit, offset, ...)
+fac_get_courses_taught(termid, userlist, data = c("count", "summary",
+  "detailed"), q, limit, offset, ...)
 
-fac_get_courses_taught_id(coursestaughtid, termid, userlist, data, q,
-  limit, offset, ...)
+fac_get_courses_taught_id(coursestaughtid, termid, userlist,
+  data = c("count", "summary", "detailed"), q, limit, offset, ...)
 
-fac_get_courses_taught_id_attachment(coursestaughtid, data, q, limit,
-  offset, ...)
+fac_get_courses_taught_id_attachment(coursestaughtid, data = c("count",
+  "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
 \item{unitid}{comma separated vector of integers
