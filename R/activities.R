@@ -1,8 +1,8 @@
-#' Retrieve details of Activities
+#' Activities
 #'
 #' @name activities
 #'
-#' @description Retrieve activity ID's from the 'Activities' section within Faculty180. A count of activities will be returned if no parameters are specified.
+#' @description Retrieve details of Activities.
 #'
 #' @param unitid integer
 #' retrieve details of a unit with unitid
@@ -57,8 +57,8 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get summary of user "000187846"
-#' r <- fac_get_user(userid = "000187846", data = "summary")
+#' ## get count of all activities
+#' r <- fac_get_activities(unitid = 1)
 #' content(r)
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activities}

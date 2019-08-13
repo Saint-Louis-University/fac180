@@ -3,7 +3,7 @@
 \name{terms}
 \alias{terms}
 \alias{fac_get_terms}
-\title{Retrieve details of academic terms.}
+\title{Terms}
 \usage{
 fac_get_terms(yearlist, data = c("count", "summary", "detailed"), q,
   limit, offset, ...)
@@ -36,7 +36,7 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve academic terms within your institution. A count of terms will be returned if no parameters are specified.
+Retrieve details of academic terms.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Terms}

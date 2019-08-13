@@ -4,7 +4,7 @@
 \alias{units}
 \alias{fac_get_units}
 \alias{fac_get_unit}
-\title{Create & retrieve details of academic units.}
+\title{Units}
 \usage{
 fac_get_units(unitid, data = c("count", "summary", "detailed"), q, limit,
   offset, depth, ...)
@@ -43,7 +43,7 @@ When defined, specifies how deep to recurse down the unit tree to find subunits.
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve academic units within your institution. A count of units will be returned if no parameters are specified.
+Create & retrieve details of academic units.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Units}

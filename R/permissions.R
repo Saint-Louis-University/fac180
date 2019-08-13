@@ -1,8 +1,8 @@
-#' Retrieve details of users' permissions.
+#' Permissions
 #'
 #' @name permissions
 #'
-#' @description Retrieve details on user's permissions within your institution. A count of user permissions will be returned if no parameters are specified.
+#' @description Retrieve details of users' permissions.
 #'
 #' @param userlist comma separated vector of string
 #' Enter user(s) to retrieve permissions information.

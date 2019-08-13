@@ -4,7 +4,7 @@
 \alias{users}
 \alias{fac_get_users}
 \alias{fac_get_user}
-\title{Create, update and retrieve details of users.}
+\title{Users}
 \usage{
 fac_get_users(unitid, employmentstatus = c("All", "Full Time",
   "Part Time", "Staff", "Inactive", "All Active"), data = c("count",
@@ -58,7 +58,7 @@ When included, additional details are indexed and included in the returned array
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details on users within your institution. A count of users will be returned if no parameters are specified.
+Create, update and retrieve details of users.
 }
 \note{
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Users}

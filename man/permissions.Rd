@@ -4,7 +4,7 @@
 \alias{permissions}
 \alias{fac_get_users_permissions}
 \alias{fac_get_user_permissions}
-\title{Retrieve details of users' permissions.}
+\title{Permissions}
 \usage{
 fac_get_users_permissions(userlist, rights = c("1,2", "1", "2"), unitid,
   data = c("count", "summary", "detailed"), q, limit, offset, ...)
@@ -54,7 +54,7 @@ Retrieves permission details on the specified user.}
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details on user's permissions within your institution. A count of user permissions will be returned if no parameters are specified.
+Retrieve details of users' permissions.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Permissions}

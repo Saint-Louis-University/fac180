@@ -4,7 +4,7 @@
 \alias{sections}
 \alias{fac_get_sections}
 \alias{fac_get_section}
-\title{Retrieve details of Sections}
+\title{Sections}
 \usage{
 fac_get_sections(unitid, sectionid, data = c("count", "summary",
   "detailed"), q, limit, offset, ...)
@@ -44,7 +44,7 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details on default and custom sections within Faculty180. A count of sections will be returned if no parameters are specified.
+Retrieve details of Sections.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Sections}

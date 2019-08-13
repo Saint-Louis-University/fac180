@@ -1,8 +1,8 @@
-#' Retrieve details of academic terms.
+#' Terms
 #'
 #' @name terms
 #'
-#' @description Retrieve academic terms within your institution. A count of terms will be returned if no parameters are specified.
+#' @description Retrieve details of academic terms.
 #'
 #' @param yearlist comma separated vector of integers
 #' Retrieve a term by year.

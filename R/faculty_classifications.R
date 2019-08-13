@@ -1,8 +1,8 @@
-#' Retrieve details of Faculty Classifications.
+#' Faculty Classifications
 #'
 #' @name faculty_classifications
 #'
-#' @description Retrieve details on faculty classification data. A count of faculty classifications will be returned if no parameters are specified.
+#' @description Retrieve details of Faculty Classifications.
 #'
 #' @param userlist comma separated vector of string
 #' Values should match the userid of users.

@@ -1,8 +1,8 @@
-#' Retrieve details of Sections
+#' Sections
 #'
 #' @name sections
 #'
-#' @description Retrieve details on default and custom sections within Faculty180. A count of sections will be returned if no parameters are specified.
+#' @description Retrieve details of Sections.
 #'
 #' @param unitid integer
 #' Retrieve a section with a specific unitid.

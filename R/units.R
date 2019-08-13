@@ -1,8 +1,8 @@
-#' Create & retrieve details of academic units.
+#' Units
 #'
 #' @name units
 #'
-#' @description Retrieve academic units within your institution. A count of units will be returned if no parameters are specified.
+#' @description Create & retrieve details of academic units.
 #'
 #' @param unitid comma separated vector of integers
 #' Retrieve a unit with specific unitid(s).

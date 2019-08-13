@@ -5,7 +5,7 @@
 \alias{fac_get_faculty_classification_data}
 \alias{fac_get_faculty_classifications}
 \alias{fac_get_faculty_classification_class}
-\title{Retrieve details of Faculty Classifications.}
+\title{Faculty Classifications}
 \usage{
 fac_get_faculty_classification_data(userlist, facultyclassificationlist,
   termstart, termfinish, data = c("count", "summary", "detailed"), q,
@@ -67,7 +67,7 @@ Retrieves details regarding a specific faculty classification.}
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details on faculty classification data. A count of faculty classifications will be returned if no parameters are specified.
+Retrieve details of Faculty Classifications.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Faculty-Classifications}

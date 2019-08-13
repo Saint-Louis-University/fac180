@@ -7,7 +7,7 @@
 \alias{fac_get_activities_section_details}
 \alias{fac_get_activity_section_details}
 \alias{fac_get_activity_section_details_attachments}
-\title{Retrieve details of Activities}
+\title{Activities}
 \usage{
 fac_get_activities(unitid, sectionid, userlist,
   activityclassificationfilter, termstart, termfinish,
@@ -114,14 +114,14 @@ Retrieve an activity with an activityid}
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve activity ID's from the 'Activities' section within Faculty180. A count of activities will be returned if no parameters are specified.
+Retrieve details of Activities.
 }
 \note{
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activities}
 }
 \examples{
-## get summary of user "000187846"
-r <- fac_get_user(userid = "000187846", data = "summary")
+## get count of all activities
+r <- fac_get_activities(unitid = 1)
 content(r)
 
 }

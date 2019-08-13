@@ -1,8 +1,8 @@
-#' Create, update and retrieve details of users.
+#' Users
 #'
 #' @name users
 #'
-#' @description Retrieve details on users within your institution. A count of users will be returned if no parameters are specified.
+#' @description Create, update and retrieve details of users.
 #'
 #' @param unitid comma separated vector of integers
 #' Retrieve a user with specific unitid(s)
