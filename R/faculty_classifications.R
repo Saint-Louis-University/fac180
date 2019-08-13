@@ -1,5 +1,7 @@
 #' Faculty Classifications
 #'
+#' @name faculty_classifications
+#'
 #' @description Retrieve details of Faculty Classifications.
 #'
 #' @param userlist string: comma separated vector of users - limits the bulk GET to the users in the list.
@@ -29,7 +31,7 @@
 #' r <- fac_get_faculty_classification_class(facultyclassificationid = 2, data = "detailed")
 #' content(r)
 #'
-#' @name faculty_classifications
+#' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Faculty-Classifications}
 NULL
 
 #' @rdname faculty_classifications
@@ -44,8 +46,7 @@ fac_get_faculty_classification_data <- function(userlist,
                                                 offset,
                                                 ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("userlist", "facultyclassificationlist", "termstart", "termfinish",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/facultyclassificationdata", query, ...)
 }
 
@@ -58,8 +59,7 @@ fac_get_faculty_classifications <- function(unitid,
                                             offset,
                                             ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/facultyclassifications", query, ...)
 }
 
@@ -72,6 +72,6 @@ fac_get_faculty_classification_class <- function(facultyclassificationid,
                                                  offset,
                                                  ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args, "facultyclassificationid")
   fac_get(paste0("/facultyclassifications/-", facultyclassificationid), query, ...)
 }

@@ -19,13 +19,20 @@ fac_get_user_permissions(userid, rights, unitid, data = c("count",
 
 \item{unitid}{string: comma separated vector of integers - only return permissions for selected units.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string
+Determines the extent of data that will be returned.
+Count: Returns count of all activities found.
+Summary: Returns an array of sections and counts of activities within that section.
+Detailed: Returns an array of sections and a subarray of activityids for each section.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string
+Search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer
+Limit query to specified number of records.}
 
-\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer
+Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
@@ -36,6 +43,9 @@ a \code{\link[httr]{response}} object
 }
 \description{
 Retrieve details of users' permissions.
+}
+\note{
+API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Permissions}
 }
 \examples{
 ## get count of users with full admin rights

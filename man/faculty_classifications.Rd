@@ -26,13 +26,20 @@ fac_get_faculty_classification_class(facultyclassificationid,
 
 \item{termfinish}{string - termid: limits classification data to the specified ending term. Defaults to the current term.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string
+Determines the extent of data that will be returned.
+Count: Returns count of all activities found.
+Summary: Returns an array of sections and counts of activities within that section.
+Detailed: Returns an array of sections and a subarray of activityids for each section.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string
+Search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer
+Limit query to specified number of records.}
 
-\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer
+Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
@@ -45,6 +52,9 @@ a \code{\link[httr]{response}} object
 }
 \description{
 Retrieve details of Faculty Classifications.
+}
+\note{
+API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Faculty-Classifications}
 }
 \examples{
 ## get count of faculty classification data

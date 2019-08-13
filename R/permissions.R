@@ -1,5 +1,7 @@
 #' Permissions
 #'
+#' @name permissions
+#'
 #' @description Retrieve details of users' permissions.
 #'
 #' @param userlist string: comma separated vector of users - limits the bulk GET to the users in the list.
@@ -20,7 +22,7 @@
 #' #r <- fac_get_user_permissions(userid = "000187846")
 #' #content(r)
 #'
-#' @name permissions
+#' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Permissions}
 NULL
 
 #' @rdname permissions
@@ -34,8 +36,7 @@ fac_get_users_permissions <- function(userlist,
                                       offset,
                                       ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("userlist", "rights", "unitid",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/users/permissions", query, ...)
 }
 
@@ -50,7 +51,6 @@ fac_get_user_permissions <- function(userid,
                                      offset,
                                      ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("rights", "unitid",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args, "userid")
   fac_get(paste0("/users/permissions/", userid), query, ...)
 }

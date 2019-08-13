@@ -10,13 +10,17 @@ fac_credentials(public_key = Sys.getenv("FAC180_DEV_PK"),
   host = Sys.getenv("FAC180_BASE_URL"))
 }
 \arguments{
-\item{public_key}{string - public key}
+\item{public_key}{string
+Public key for HMAC encryption}
 
-\item{private_key}{string - private key}
+\item{private_key}{string
+Private key for HMAC encryption}
 
-\item{database_id}{string - database id}
+\item{database_id}{string
+Database ID to connect to}
 
-\item{host}{string - base url}
+\item{host}{string
+API host url}
 }
 \value{
 named list of credentials

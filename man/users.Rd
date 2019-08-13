@@ -24,13 +24,20 @@ fac_get_user(userid, extra = c("accounttype", "suffix", "honorific",
 
 \item{employmentstatus}{string - users are filtered by their employment status.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string
+Determines the extent of data that will be returned.
+Count: Returns count of all activities found.
+Summary: Returns an array of sections and counts of activities within that section.
+Detailed: Returns an array of sections and a subarray of activityids for each section.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string
+Search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer
+Limit query to specified number of records.}
 
-\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer
+Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
@@ -43,6 +50,9 @@ a \code{\link[httr]{response}} object
 }
 \description{
 Create, update, and retreive details of users.
+}
+\note{
+API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Users}
 }
 \examples{
 ## get count of users

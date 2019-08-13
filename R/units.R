@@ -1,5 +1,7 @@
 #' Units
 #'
+#' @name units
+#'
 #' @description Retrieve academic units within your institution.
 #'
 #' @param unitid string: comma separated vector of integers - retrieve units with specific ids.
@@ -17,7 +19,7 @@
 #' r <- fac_get_unit(unitid = "1", data = "detailed")
 #' content(r)
 #'
-#' @name units
+#' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Units}
 NULL
 
 #' @rdname units
@@ -30,8 +32,7 @@ fac_get_units <- function(unitid,
                           depth,
                           ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "depth",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/units", query, ...)
 }
 
@@ -44,7 +45,6 @@ fac_get_unit <- function(unitid,
                          offset,
                          ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "depth",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get(paste0("/units/", unitid), query, ...)
 }

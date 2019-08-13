@@ -1,5 +1,7 @@
 #' Sections
 #'
+#' @name sections
+#'
 #' @description Retrieve details of Sections.
 #'
 #' @param unitid integer: limit sections to a specific unit
@@ -17,7 +19,7 @@
 #' r <- fac_get_section(sectionid = 7, data = "detailed")
 #' content(r)
 #'
-#' @name sections
+#' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Sections}
 NULL
 
 #' @rdname sections
@@ -30,8 +32,7 @@ fac_get_sections <- function(unitid,
                              offset,
                              ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "sectionid",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/sections", query, ...)
 }
 
@@ -44,6 +45,6 @@ fac_get_section <- function(sectionid,
                             offset,
                             ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args, "sectionid")
   fac_get(paste0("/sections/-", sectionid), query, ...)
 }

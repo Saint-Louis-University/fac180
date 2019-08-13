@@ -16,6 +16,8 @@
 #' ## get detailed information for two terms
 #' r <- fac_get_terms(yearlist = "2018,2019", data = "detailed")
 #' content(r)
+#'
+#' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Terms}
 fac_get_terms <- function(yearlist,
                           data = c("count", "summary", "detailed"),
                           q,
@@ -23,7 +25,6 @@ fac_get_terms <- function(yearlist,
                           offset,
                           ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("yearlist",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/terms", query, ...)
 }

@@ -1,5 +1,7 @@
 #' Users
 #'
+#' @name users
+#'
 #' @description Create, update, and retreive details of users.
 #'
 #' @param unitid string: comma separated vector of integers - retrieve users in units with specific ids.
@@ -27,7 +29,7 @@
 #' r <- fac_get_user(userid = "000187846", data = "summary")
 #' content(r)
 #'
-#' @name users
+#' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Users}
 NULL
 
 #' @rdname users
@@ -40,8 +42,7 @@ fac_get_users <- function(unitid,
                           offset,
                           ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("unitid", "employmentstatus",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args)
   fac_get("/users", query, ...)
 }
 
@@ -55,7 +56,6 @@ fac_get_user <- function(userid,
                          offset,
                          ...) {
   args <- lapply(as.list(match.call())[-1], eval.parent)
-  query <- args[c("extra",
-                  "data", "q", "limit", "offset")]
+  query <- fac_build_query_list(args, "userid")
   fac_get(paste0("/users/", userid), query, ...)
 }

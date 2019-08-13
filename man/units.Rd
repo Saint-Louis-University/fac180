@@ -15,13 +15,20 @@ fac_get_unit(unitid, data = c("count", "summary", "detailed"), q, limit,
 \arguments{
 \item{unitid}{string: comma separated vector of integers - retrieve units with specific ids.}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string
+Determines the extent of data that will be returned.
+Count: Returns count of all activities found.
+Summary: Returns an array of sections and counts of activities within that section.
+Detailed: Returns an array of sections and a subarray of activityids for each section.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string
+Search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer
+Limit query to specified number of records.}
 
-\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer
+Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
 \item{depth}{integer - how deep to recurse down the unit tree to find subunits}
 
@@ -32,6 +39,9 @@ a \code{\link[httr]{response}} object
 }
 \description{
 Retrieve academic units within your institution.
+}
+\note{
+API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Units}
 }
 \examples{
 ## retrieve a summary listing of the first 3 academic units

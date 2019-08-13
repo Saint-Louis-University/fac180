@@ -2,6 +2,11 @@
 
 export(content)
 export(fac_credentials)
+export(fac_get_activities)
+export(fac_get_activities_section)
+export(fac_get_activities_section_details)
+export(fac_get_activity_section_details)
+export(fac_get_activity_section_details_attachments)
 export(fac_get_faculty_classification_class)
 export(fac_get_faculty_classification_data)
 export(fac_get_faculty_classifications)

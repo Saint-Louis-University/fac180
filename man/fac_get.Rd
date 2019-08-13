@@ -9,21 +9,31 @@ fac_get(request_string, query = list(), ...,
   "detailed"), q, limit, offset)
 }
 \arguments{
-\item{request_string}{string - api endpoint to call}
+\item{request_string}{string
+API endpoint to call}
 
-\item{query}{named list - passed to \code{\link[httr]{modify_url}} to build query strings}
+\item{query}{named list
+Passed to \code{\link[httr]{modify_url}} to build query strings.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
-\item{credentials}{function - returns named list of credentials. See \code{\link{fac_credentials}}}
+\item{credentials}{function
+Returns named list of credentials. See \code{\link{fac_credentials}}}
 
-\item{data}{string - determine the extent of data that will be returned.}
+\item{data}{string
+Determines the extent of data that will be returned.
+Count: Returns count of all activities found.
+Summary: Returns an array of sections and counts of activities within that section.
+Detailed: Returns an array of sections and a subarray of activityids for each section.}
 
-\item{q}{string - search term. Use '*' as wildcard.}
+\item{q}{string
+Search term. Use '*' as wildcard.}
 
-\item{limit}{integer - limit query to specified number of records.}
+\item{limit}{integer
+Limit query to specified number of records.}
 
-\item{offset}{integer - used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
+\item{offset}{integer
+Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 }
 \value{
 a \code{\link[httr]{response}} object
