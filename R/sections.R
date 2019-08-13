@@ -1,11 +1,17 @@
-#' Sections
+#' Retrieve details of Sections
 #'
 #' @name sections
 #'
-#' @description Retrieve details of Sections.
+#' @description Retrieve details on default and custom sections within Faculty180. A count of sections will be returned if no parameters are specified.
 #'
-#' @param unitid integer: limit sections to a specific unit
-#' @param sectionid integer: limit sections to a specific section
+#' @param unitid integer
+#' Retrieve a section with a specific unitid.
+#' When defined, sections are limited to those found at the specified unit.
+#' When undefined, all sections are returned.
+#' @param sectionid integer
+#' Retrieve a section with a specific sectionid.
+#' When defined, limits the sections to only the specified section.
+#' When undefined, all sections are returned
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object

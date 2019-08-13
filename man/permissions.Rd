@@ -4,7 +4,7 @@
 \alias{permissions}
 \alias{fac_get_users_permissions}
 \alias{fac_get_user_permissions}
-\title{Permissions}
+\title{Retrieve details of users' permissions.}
 \usage{
 fac_get_users_permissions(userlist, rights = c("1,2", "1", "2"), unitid,
   data = c("count", "summary", "detailed"), q, limit, offset, ...)
@@ -13,11 +13,22 @@ fac_get_user_permissions(userid, rights, unitid, data = c("count",
   "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
-\item{userlist}{string: comma separated vector of users - limits the bulk GET to the users in the list.}
+\item{userlist}{comma separated vector of string
+Enter user(s) to retrieve permissions information.
+When defined, limits the bulk GET to the users in the list.
+When undefined, all faculty and their permissions are listed}
 
-\item{rights}{string - when set to "1" will report only users with Full Admin Rights. When set to "2" will report only users with Report Rights. Defaults to "1,2".}
+\item{rights}{string
+Defaults to “1,2” when nothing is sent or the value is invalid.
+When set to “1”, the system will only report users with Full Admin Rights.
+When set to “2”, the system will only report users with Report Rights.
+When set to “1,2” all rights will be returned.}
 
-\item{unitid}{string: comma separated vector of integers - only return permissions for selected units.}
+\item{unitid}{comma separated vector of integer
+Retrieve a user with specific unitid(s).
+When defined, only returns permissions for selected unitids.
+When undefined, all units are selected.
+Multiple values can be sent as a comma separated list.}
 
 \item{data}{string
 Determines the extent of data that will be returned.
@@ -36,13 +47,14 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
-\item{userid}{string: id of a specific user}
+\item{userid}{string
+Retrieves permission details on the specified user.}
 }
 \value{
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details of users' permissions.
+Retrieve details on user's permissions within your institution. A count of user permissions will be returned if no parameters are specified.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Permissions}

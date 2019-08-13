@@ -1,11 +1,16 @@
-#' Units
+#' Create & retrieve details of academic units.
 #'
 #' @name units
 #'
-#' @description Retrieve academic units within your institution.
+#' @description Retrieve academic units within your institution. A count of units will be returned if no parameters are specified.
 #'
-#' @param unitid string: comma separated vector of integers - retrieve units with specific ids.
-#' @param depth integer - how deep to recurse down the unit tree to find subunits
+#' @param unitid comma separated vector of integers
+#' Retrieve a unit with specific unitid(s).
+#' When defined, the unit specified and any sub-units are returned down the whole depth of the unit tree.
+#' When undefined, highest unit accessible and any sub-units are returned.
+#' Multiple values can be sent as a comma separated list.
+#' @param depth integer
+#' When defined, specifies how deep to recurse down the unit tree to find subunits.
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object

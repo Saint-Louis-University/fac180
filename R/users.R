@@ -1,13 +1,22 @@
-#' Users
+#' Create, update and retrieve details of users.
 #'
 #' @name users
 #'
-#' @description Create, update, and retreive details of users.
+#' @description Retrieve details on users within your institution. A count of users will be returned if no parameters are specified.
 #'
-#' @param unitid string: comma separated vector of integers - retrieve users in units with specific ids.
-#' @param userid string: id of a specific user.
-#' @param employmentstatus string - users are filtered by their employment status.
-#' @param extra string: comma seperated vector of string - when included, additional details are indexed and included in the returned array.
+#' @param unitid comma separated vector of integers
+#' Retrieve a user with specific unitid(s)
+#' When defined, filters users with given unitid as their primary unit.
+#' When undefined, all users for all units are returned.
+#' Multiple values can be sent as a comma separated list.
+#' @param userid string
+#' Retrieves full profile details on the specified user(s).
+#' By default the only data that is returned for a given user is basic identifying information, if other user details are needed they should be specified using the “extra” parameter.
+#' @param employmentstatus string
+#' When defined, users are filtered by their employment status.
+#' @param extra comma seperated vector of string
+#' Multiple values can be sent as a comma separated list.
+#' When included, additional details are indexed and included in the returned array.
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object

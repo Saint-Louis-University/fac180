@@ -1,13 +1,25 @@
-#' Permissions
+#' Retrieve details of users' permissions.
 #'
 #' @name permissions
 #'
-#' @description Retrieve details of users' permissions.
+#' @description Retrieve details on user's permissions within your institution. A count of user permissions will be returned if no parameters are specified.
 #'
-#' @param userlist string: comma separated vector of users - limits the bulk GET to the users in the list.
-#' @param rights string - when set to "1" will report only users with Full Admin Rights. When set to "2" will report only users with Report Rights. Defaults to "1,2".
-#' @param unitid string: comma separated vector of integers - only return permissions for selected units.
-#' @param userid string: id of a specific user
+#' @param userlist comma separated vector of string
+#' Enter user(s) to retrieve permissions information.
+#' When defined, limits the bulk GET to the users in the list.
+#' When undefined, all faculty and their permissions are listed
+#' @param rights string
+#' Defaults to “1,2” when nothing is sent or the value is invalid.
+#' When set to “1”, the system will only report users with Full Admin Rights.
+#' When set to “2”, the system will only report users with Report Rights.
+#' When set to “1,2” all rights will be returned.
+#' @param unitid comma separated vector of integer
+#' Retrieve a user with specific unitid(s).
+#' When defined, only returns permissions for selected unitids.
+#' When undefined, all units are selected.
+#' Multiple values can be sent as a comma separated list.
+#' @param userid string
+#' Retrieves permission details on the specified user.
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object

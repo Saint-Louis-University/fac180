@@ -5,7 +5,7 @@
 \alias{fac_get_faculty_classification_data}
 \alias{fac_get_faculty_classifications}
 \alias{fac_get_faculty_classification_class}
-\title{Faculty Classifications}
+\title{Retrieve details of Faculty Classifications.}
 \usage{
 fac_get_faculty_classification_data(userlist, facultyclassificationlist,
   termstart, termfinish, data = c("count", "summary", "detailed"), q,
@@ -18,13 +18,25 @@ fac_get_faculty_classification_class(facultyclassificationid,
   data = c("count", "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
-\item{userlist}{string: comma separated vector of users - limits the bulk GET to the users in the list.}
+\item{userlist}{comma separated vector of string
+Values should match the userid of users.
+When defined, filter returned data to the specified users.
+When undefined, all users are returned.}
 
-\item{facultyclassificationlist}{string: comma seperated vector of integers - filter returned data to the sepcified faculty classifications.}
+\item{facultyclassificationlist}{comma separated vector of integer
+Values should match the facultyclassificationid of faculty classifications.
+When defined, filter returned data to the specified faculty classifications.
+When undefined, all faculty classifications are returned.}
 
-\item{termstart}{string - termid: limits classification data to the specified starting term. Defaults to current term.}
+\item{termstart}{string
+Value should match the termid of terms.
+When defined, limits classification data to the specified starting term.
+When undefined, defaults to the current term.}
 
-\item{termfinish}{string - termid: limits classification data to the specified ending term. Defaults to the current term.}
+\item{termfinish}{string
+Value should match the termid of terms.
+When defined, limits classification data to the specified ending term.
+When undefined, defaults to the current term.}
 
 \item{data}{string
 Determines the extent of data that will be returned.
@@ -43,15 +55,19 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
-\item{unitid}{string - filter classifications to the specified unit.}
+\item{unitid}{integer
+Retrieve a faculty classification with a specific unitid.
+When defined, filters classifications to the specified unit.
+When undefined, filters classifications from the highest unit accessible.}
 
-\item{facultyclassificationid}{integer - specific faculty classification.}
+\item{facultyclassificationid}{integer
+Retrieves details regarding a specific faculty classification.}
 }
 \value{
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve details of Faculty Classifications.
+Retrieve details on faculty classification data. A count of faculty classifications will be returned if no parameters are specified.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Faculty-Classifications}

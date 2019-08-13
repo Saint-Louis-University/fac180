@@ -1,8 +1,8 @@
-#' Activities
+#' Retrieve details of Activities
 #'
-#' @name activites
+#' @name activities
 #'
-#' @description Retrieve details of Activities
+#' @description Retrieve activity ID's from the 'Activities' section within Faculty180. A count of activities will be returned if no parameters are specified.
 #'
 #' @param unitid integer
 #' retrieve details of a unit with unitid
@@ -64,7 +64,7 @@
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activities}
 NULL
 
-#' @rdname activites
+#' @rdname activities
 #' @export
 fac_get_activities <- function(unitid,
                                sectionid,
@@ -84,7 +84,7 @@ fac_get_activities <- function(unitid,
   fac_get("/activities", query, ...)
 }
 
-#' @rdname activites
+#' @rdname activities
 #' @export
 fac_get_activities_section <- function(sectionid,
                                        unitid,
@@ -104,7 +104,7 @@ fac_get_activities_section <- function(sectionid,
   fac_get(paste0("/activities/", sectionid), query, ...)
 }
 
-#' @rdname activites
+#' @rdname activities
 #' @export
 fac_get_activities_section_details <- function(sectionid,
                                                unitid,
@@ -125,7 +125,7 @@ fac_get_activities_section_details <- function(sectionid,
   fac_get(paste0("/activities/-", sectionid), query, ...)
 }
 
-#' @rdname activites
+#' @rdname activities
 #' @export
 fac_get_activity_section_details <- function(sectionid,
                                              activityid,
@@ -140,7 +140,7 @@ fac_get_activity_section_details <- function(sectionid,
   fac_get(paste("/activities", sectionid, activityid, sep = "/"), query, ...)
 }
 
-#' @rdname activites
+#' @rdname activities
 #' @export
 fac_get_activity_section_details_attachments <- function(sectionid,
                                                          activityid,

@@ -1,12 +1,17 @@
-#' Terms
+#' Retrieve details of academic terms.
 #'
-#' @description Retrieve academic terms within your institution.
+#' @name terms
 #'
-#' @param yearlist string: comma separated vector of integers - retrieve a term by year.
+#' @description Retrieve academic terms within your institution. A count of terms will be returned if no parameters are specified.
+#'
+#' @param yearlist comma separated vector of integers
+#' Retrieve a term by year.
+#' When defined, filters terms matching the specified year to the term's academic year.
+#' When undefined, terms are not filtered by academic year.
+#' Multiple values can be sent as a comma separated list.
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object
-#' @export
 #'
 #' @examples
 #' ## get summary information for one term
@@ -18,6 +23,9 @@
 #' content(r)
 #'
 #' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Terms}
+
+#' @rdname terms
+#' @export
 fac_get_terms <- function(yearlist,
                           data = c("count", "summary", "detailed"),
                           q,

@@ -1,15 +1,31 @@
-#' Faculty Classifications
+#' Retrieve details of Faculty Classifications.
 #'
 #' @name faculty_classifications
 #'
-#' @description Retrieve details of Faculty Classifications.
+#' @description Retrieve details on faculty classification data. A count of faculty classifications will be returned if no parameters are specified.
 #'
-#' @param userlist string: comma separated vector of users - limits the bulk GET to the users in the list.
-#' @param facultyclassificationlist string: comma seperated vector of integers - filter returned data to the sepcified faculty classifications.
-#' @param termstart string - termid: limits classification data to the specified starting term. Defaults to current term.
-#' @param termfinish string - termid: limits classification data to the specified ending term. Defaults to the current term.
-#' @param unitid string - filter classifications to the specified unit.
-#' @param facultyclassificationid integer - specific faculty classification.
+#' @param userlist comma separated vector of string
+#' Values should match the userid of users.
+#' When defined, filter returned data to the specified users.
+#' When undefined, all users are returned.
+#' @param facultyclassificationlist comma separated vector of integer
+#' Values should match the facultyclassificationid of faculty classifications.
+#' When defined, filter returned data to the specified faculty classifications.
+#' When undefined, all faculty classifications are returned.
+#' @param termstart string
+#' Value should match the termid of terms.
+#' When defined, limits classification data to the specified starting term.
+#' When undefined, defaults to the current term.
+#' @param termfinish string
+#' Value should match the termid of terms.
+#' When defined, limits classification data to the specified ending term.
+#' When undefined, defaults to the current term.
+#' @param unitid integer
+#' Retrieve a faculty classification with a specific unitid.
+#' When defined, filters classifications to the specified unit.
+#' When undefined, filters classifications from the highest unit accessible.
+#' @param facultyclassificationid integer
+#' Retrieves details regarding a specific faculty classification.
 #' @inheritParams fac_get
 #'
 #' @return a \code{\link[httr]{response}} object

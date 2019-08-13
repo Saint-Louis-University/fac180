@@ -4,7 +4,7 @@
 \alias{users}
 \alias{fac_get_users}
 \alias{fac_get_user}
-\title{Users}
+\title{Create, update and retrieve details of users.}
 \usage{
 fac_get_users(unitid, employmentstatus = c("All", "Full Time",
   "Part Time", "Staff", "Inactive", "All Active"), data = c("count",
@@ -20,9 +20,14 @@ fac_get_user(userid, extra = c("accounttype", "suffix", "honorific",
   data = c("count", "summary", "detailed"), q, limit, offset, ...)
 }
 \arguments{
-\item{unitid}{string: comma separated vector of integers - retrieve users in units with specific ids.}
+\item{unitid}{comma separated vector of integers
+Retrieve a user with specific unitid(s)
+When defined, filters users with given unitid as their primary unit.
+When undefined, all users for all units are returned.
+Multiple values can be sent as a comma separated list.}
 
-\item{employmentstatus}{string - users are filtered by their employment status.}
+\item{employmentstatus}{string
+When defined, users are filtered by their employment status.}
 
 \item{data}{string
 Determines the extent of data that will be returned.
@@ -41,15 +46,19 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 
-\item{userid}{string: id of a specific user.}
+\item{userid}{string
+Retrieves full profile details on the specified user(s).
+By default the only data that is returned for a given user is basic identifying information, if other user details are needed they should be specified using the “extra” parameter.}
 
-\item{extra}{string: comma seperated vector of string - when included, additional details are indexed and included in the returned array.}
+\item{extra}{comma seperated vector of string
+Multiple values can be sent as a comma separated list.
+When included, additional details are indexed and included in the returned array.}
 }
 \value{
 a \code{\link[httr]{response}} object
 }
 \description{
-Create, update, and retreive details of users.
+Retrieve details on users within your institution. A count of users will be returned if no parameters are specified.
 }
 \note{
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Users}

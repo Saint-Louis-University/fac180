@@ -4,7 +4,7 @@
 \alias{units}
 \alias{fac_get_units}
 \alias{fac_get_unit}
-\title{Units}
+\title{Create & retrieve details of academic units.}
 \usage{
 fac_get_units(unitid, data = c("count", "summary", "detailed"), q, limit,
   offset, depth, ...)
@@ -13,7 +13,11 @@ fac_get_unit(unitid, data = c("count", "summary", "detailed"), q, limit,
   offset, ...)
 }
 \arguments{
-\item{unitid}{string: comma separated vector of integers - retrieve units with specific ids.}
+\item{unitid}{comma separated vector of integers
+Retrieve a unit with specific unitid(s).
+When defined, the unit specified and any sub-units are returned down the whole depth of the unit tree.
+When undefined, highest unit accessible and any sub-units are returned.
+Multiple values can be sent as a comma separated list.}
 
 \item{data}{string
 Determines the extent of data that will be returned.
@@ -30,7 +34,8 @@ Limit query to specified number of records.}
 \item{offset}{integer
 Used with limit to return records in batches, e.g., if limit = 20 and offset = 21, records 21-40 will be returned.}
 
-\item{depth}{integer - how deep to recurse down the unit tree to find subunits}
+\item{depth}{integer
+When defined, specifies how deep to recurse down the unit tree to find subunits.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
 }
@@ -38,7 +43,7 @@ Used with limit to return records in batches, e.g., if limit = 20 and offset = 2
 a \code{\link[httr]{response}} object
 }
 \description{
-Retrieve academic units within your institution.
+Retrieve academic units within your institution. A count of units will be returned if no parameters are specified.
 }
 \note{
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Units}
