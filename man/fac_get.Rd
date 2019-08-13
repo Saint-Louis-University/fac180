@@ -5,6 +5,7 @@
 \title{Faculty180 GET}
 \usage{
 fac_get(request_string, query = list(), ...,
+  host = Sys.getenv("FAC180_BASE_URL"),
   credentials = fac_credentials(), data = c("count", "summary",
   "detailed"), q, limit, offset)
 }
@@ -16,6 +17,9 @@ API endpoint to call}
 Passed to \code{\link[httr]{modify_url}} to build query strings.}
 
 \item{...}{additional arguments passed to \code{\link[httr]{GET}}.}
+
+\item{host}{string
+Host url}
 
 \item{credentials}{function
 Returns named list of credentials. See \code{\link{fac_credentials}}}

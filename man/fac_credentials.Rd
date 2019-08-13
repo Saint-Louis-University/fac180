@@ -6,8 +6,7 @@
 \usage{
 fac_credentials(public_key = Sys.getenv("FAC180_DEV_PK"),
   private_key = Sys.getenv("FAC180_DEV_SK"),
-  database_id = Sys.getenv("FAC180_DEV_DB"),
-  host = Sys.getenv("FAC180_BASE_URL"))
+  database_id = Sys.getenv("FAC180_DEV_DB"))
 }
 \arguments{
 \item{public_key}{string
@@ -18,9 +17,6 @@ Private key for HMAC encryption}
 
 \item{database_id}{string
 Database ID to connect to}
-
-\item{host}{string
-API host url}
 }
 \value{
 named list of credentials

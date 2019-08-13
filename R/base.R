@@ -36,8 +36,6 @@ fac_build_query_list <- function(call_args, path_args = NULL, httr_args = "...")
 #' Private key for HMAC encryption
 #' @param database_id string
 #' Database ID to connect to
-#' @param host string
-#' API host url
 #'
 #' @return named list of credentials
 #' @export
@@ -46,12 +44,10 @@ fac_build_query_list <- function(call_args, path_args = NULL, httr_args = "...")
 #' fac_credentials()
 fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
                             private_key = Sys.getenv("FAC180_DEV_SK"),
-                            database_id = Sys.getenv("FAC180_DEV_DB"),
-                            host = Sys.getenv("FAC180_BASE_URL")) {
+                            database_id = Sys.getenv("FAC180_DEV_DB")) {
   list(public_key = public_key,
        private_key = private_key,
-       database_id = database_id,
-       host = host)
+       database_id = database_id)
 }
 
 #' Faculty180 GET
@@ -63,6 +59,8 @@ fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
 #' @param query named list
 #' Passed to \code{\link[httr]{modify_url}} to build query strings.
 #' @param ... additional arguments passed to \code{\link[httr]{GET}}.
+#' @param host string
+#' Host url
 #' @param credentials function
 #' Returns named list of credentials. See \code{\link{fac_credentials}}
 #' @param data string
@@ -81,6 +79,7 @@ fac_credentials <- function(public_key = Sys.getenv("FAC180_DEV_PK"),
 fac_get <- function(request_string,
                     query = list(),
                     ...,
+                    host = Sys.getenv("FAC180_BASE_URL"),
                     credentials = fac_credentials(),
                     data = c("count", "summary", "detailed"),
                     q,
@@ -91,7 +90,7 @@ fac_get <- function(request_string,
   verb_request_string <- paste(request_verb, "\n",  timestamp_string, request_string, sep = "\n")
   signed_hash <- httr::hmac_sha1(credentials$private_key, verb_request_string)
   authorization_header <- paste0("INTF ", credentials$public_key, ":", signed_hash)
-  url <- paste0(credentials$host, request_string)
+  url <- paste0(host, request_string)
   config <- httr::add_headers("TimeStamp" = timestamp_string,
                               "Authorization" = authorization_header,
                               "INTF-DatabaseID" = credentials$database_id)
