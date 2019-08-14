@@ -68,3 +68,15 @@ fac_get_user <- function(userid,
   query <- fac_build_query_list(args, "userid")
   fac_get(paste0("/users/", userid), query, ...)
 }
+
+#' @rdname users
+#' @export
+fac_get_users_activity_input_request <- function() {
+  fac_get("/users/activity_input_request", host = "https://faculty180.interfolio.com")
+}
+
+#' @rdname users
+#' @export
+fac_get_users_current <- function() {
+  fac_get("/users/current", host = "https://faculty180.interfolio.com")
+}
