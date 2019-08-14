@@ -57,9 +57,56 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get count of all activities
-#' r <- fac_get_activities(unitid = 1)
+#' \dontrun{
+#' ## retrieves faculty activity IDs in sections
+#' r <- fac_get_activities()
 #' content(r)
+#'
+#' ## retrieves faculty activity IDs in sections
+#' r <- fac_get_activities(sectionid = 5, data = "summary")
+#' content(r)
+#'
+#' ## retrieves activities for a specified action
+#' r <- fac_get_activities_section(sectionid = 5)
+#' content(r)
+#'
+#' ## retrieves activities for a specified action
+#' r <- fac_get_activities_section(sectionid = 5,
+#'                                 data = "detailed",
+#'                                 activityclassificationfilter = "-2,12")
+#' content(r)
+#'
+#' ## retrieves activities details for a specified action
+#' r <- fac_get_activities_section_details(sectionid = -21)
+#' content(r)
+#'
+#' ## retrieves activities details for a specified action
+#' r <- fac_get_activities_section_details(sectionid = -21,
+#'                                         data = "detailed",
+#'                                         activityclassificationpull = "-2,12")
+#' content(r)
+#'
+#' ## retrieves details for a given activity
+#' r <- fac_get_activities_section_details(sectionid = 5, activityid = 25)
+#' content(r)
+#'
+#' ## retrieves details for a given activity
+#' r <- fac_get_activities_section_details(sectionid = 5,
+#'                                         activityid = 25,
+#'                                         data = "detailed",
+#'                                         activityclassificationpull = "-2,12")
+#' content(r)
+#'
+#' ## retrieves details for a given activity attachment(s)
+#' r <- fac_get_activities_section_details_attachments(sectionid = 5, activityid = 25)
+#' content(r)
+#'
+#' ## retrieves details for a given activity attachment(s)
+#' r <- fac_get_activities_section_details_attachments(sectionid = 5,
+#'                                                     activityid = 25,
+#'                                                     data = "detailed")
+#' content(r)
+#' }
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activities}
 NULL

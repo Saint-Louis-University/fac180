@@ -16,13 +16,19 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## retrieve a summary listing of the first 3 academic units
-#' r <- fac_get_units(data = "summary", limit = 3)
+#' \dontrun{
+#' ## retrieves a listing of academic units
+#' r <- fac_get_units(data = "detailed")
 #' content(r)
 #'
-#' ## retrieve detailed data on the first academic unit
-#' r <- fac_get_unit(unitid = "1", data = "detailed")
+#' ## retrieves a listing of academic units
+#' r <- fac_get_units(data = "detailed", unitid = 2)
 #' content(r)
+#'
+#' ## retrieves details on the specific unit
+#' r <- fac_get_unit(unitid = 2, data = "detailed")
+#' content(r)
+#' }
 #'
 #' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Units}
 NULL

@@ -4,6 +4,8 @@
 \alias{users}
 \alias{fac_get_users}
 \alias{fac_get_user}
+\alias{fac_get_users_activity_input_request}
+\alias{fac_get_users_current}
 \title{Users}
 \usage{
 fac_get_users(unitid, employmentstatus = c("All", "Full Time",
@@ -18,6 +20,10 @@ fac_get_user(userid, extra = c("accounttype", "suffix", "honorific",
   "emergencycontactphone", "pager", "personalstreet1", "personalstreet2",
   "personalcity", "personalstate", "personalzip", "url"),
   data = c("count", "summary", "detailed"), q, limit, offset, ...)
+
+fac_get_users_activity_input_request()
+
+fac_get_users_current()
 }
 \arguments{
 \item{unitid}{comma separated vector of integers
@@ -64,20 +70,30 @@ Create, update and retrieve details of users.
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Users}
 }
 \examples{
-## get count of users
-r <- fac_get_users()
+\dontrun{
+## retrieves a listing of users and basic identifying information for each
+r <- fac_get_users(data = "detailed")
 content(r)
 
-## get details of users in unit 3
-r <- fac_get_users(unitid = "3", data = "detailed")
+## retrieves a listing of users and basic identifying information for each
+r <- fac_get_users(data = "detailed", employmentstatus = "Full+Time")
 content(r)
 
-## get summary of all full time in units 3 and 4
-r <- fac_get_users(unitid = "3,4", employmentstatus = "Full Time", data = "summary")
+## retrieves full profile details on the specified user(s)
+r <- fac_get_user(userid = "m123456")
 content(r)
 
-## get summary of user "000187846"
-r <- fac_get_user(userid = "000187846", data = "summary")
+## retrieves full profile details on the specified user(s)
+r <- fac_get_user(userid = "m123456", data = "detailed", extra = "honorific,phone, acounttype")
 content(r)
+
+## retrieves a list of active activity input requests
+r <- fac_get_users_activity_input_request()
+content(r)
+
+## retrieves a list of tenant IDs and is_institutional_admin flag
+r <- fac_get_users_current()
+content(r)
+}
 
 }

@@ -23,6 +23,10 @@ Retrieves an attachment.
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Download-Attachments}
 }
 \examples{
-## get an attachment ???
+\dontrun{
+## retrieves an attachment
+r <- fac_get_download_attachments(attachmentid = 100)
+content(r)
+}
 
 }

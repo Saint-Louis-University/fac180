@@ -33,9 +33,15 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get user data
-#' r <- fac_get_user_data()
+#' \dontrun{
+#' ## retrieves all of the user's activities with section information
+#' r <- fac_get_user_data(userlist = "m123456,m789123")
 #' content(r)
+#'
+#' ## retrieves all of the user's activities with section information
+#' r <- fac_get_user_data(userlist = "m123456,m789123", category = "activity_input")
+#' content(r)
+#' }
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/User-Data}
 NULL

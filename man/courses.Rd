@@ -78,8 +78,46 @@ Retrieve details of Courses (Prefixes, Courses Taught, Attachments).
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Courses}
 }
 \examples{
-## get count of course prefixes
-r <- fac_get_course_prefixes(unitid = 1)
+\dontrun{
+## retrieves course prefixes
+r <- fac_get_course_prefixes()
 content(r)
+
+## retrieves course prefixes
+r <- fac_get_course_prefixes(data = "detailed")
+content(r)
+
+## retrieves courses
+r <- fac_get_courses()
+content(r)
+
+## retrieves courses
+r <- fac_get_courses(data = "detailed", exta = "title,description")
+content(r)
+
+## retrieves details regarding the course catalog
+r <- fac_get_courses_taught()
+content(r)
+
+## retrieves details regarding the course catalog
+r <- fac_get_courses_taught(data = "detailed", termid = "2015/02")
+content(r)
+
+## retrieves details regarding a single item in the course catalog
+r <- fac_get_courses_taught_id(coursestaughtid = 150)
+content(r)
+
+## retrieves details regarding a single item in the course catalog
+r <- fac_get_courses_taught_id(coursestaughtid = 150, data = "detailed", termid = "2015/02")
+content(r)
+
+## retrieves details regarding the attachments of courses taught
+r <- fac_get_courses_taught_id_attachment(coursestaughtid = 150)
+content(r)
+
+## retrieves details regarding the attachments of courses taught
+r <- fac_get_courses_taught_id_attachment(coursestaughtid = 150)
+content(r)
+}
 
 }

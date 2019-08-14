@@ -24,8 +24,10 @@ Retrieves frequently asked questions.
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/FAQ}
 }
 \examples{
-## get faq
+\dontrun{
+## retrieves a listing of answered FAQ items
 r <- fac_get_faq()
 content(r)
+}
 
 }

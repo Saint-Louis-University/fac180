@@ -15,9 +15,15 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get count of activity classifications
-#' r <- fac_get_activity_classifications()
+#' \dontrun{
+#' ## retrieves details regarding activity classifications
+#' r <- fac_get_activity_classifications(data = "detailed")
 #' content(r)
+#'
+#' ## retrieves details regarding activity classifications
+#' r <- fac_get_activity_classifications(activityclassificationid = 18, data = "detailed")
+#' content(r)
+#' }
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activity-Classifications}
 NULL

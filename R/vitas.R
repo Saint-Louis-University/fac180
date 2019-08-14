@@ -50,9 +50,19 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get count of vitas
-#' r <- fac_get_vitas()
+#' \dontrun{
+#' ## retrieves details of all vitae
+#' r <- fac_get_vitas(data = "detailed")
 #' content(r)
+#'
+#' ## retrieves details for a user's vita
+#' r <- fac_get_vita(vitaid = 100,
+#'                   userid = "m123456",
+#'                   output = "html",
+#'                   termstart = "2015/02",
+#'                   termfinish = "2017/02")
+#' content(r)
+#' }
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Vitas}
 NULL

@@ -60,8 +60,14 @@ Retrieve details of users' evaluations.
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Evaluations}
 }
 \examples{
-## get count of evaluations
-r <- fac_get_evaluations(unitid = 1)
+\dontrun{
+## retrieves details for users' evaluations
+r <- fac_get_evaluations(data = "detailed")
 content(r)
+
+## searches for an existing evaluation
+r <- fac_get_evaluations_search()
+content(r)
+}
 
 }

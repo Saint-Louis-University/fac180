@@ -14,13 +14,15 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get summary information for one term
-#' r <- fac_get_terms(yearlist = "2019", data = "summary")
+#' \dontrun{
+#' ## retrieves the "term" periods that a school has set up
+#' r <- fac_get_terms(data = "detailed")
 #' content(r)
 #'
-#' ## get detailed information for two terms
-#' r <- fac_get_terms(yearlist = "2018,2019", data = "detailed")
+#' ## retrieves the "term" periods that a school has set up
+#' r <- fac_get_terms(data = "detailed", yearlist = "2017,2018")
 #' content(r)
+#' }
 #'
 #' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Terms}
 

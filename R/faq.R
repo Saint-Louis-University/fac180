@@ -12,9 +12,11 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get faq
+#' \dontrun{
+#' ## retrieves a listing of answered FAQ items
 #' r <- fac_get_faq()
 #' content(r)
+#' }
 #'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/FAQ}
 NULL

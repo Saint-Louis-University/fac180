@@ -50,12 +50,22 @@ Retrieve details of Sections.
 API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Sections}
 }
 \examples{
-## get detailed information on unit 1
-r <- fac_get_sections(unitid = 1, data = "detailed")
+\dontrun{
+## retrieves data sections
+r <- fac_get_sections()
 content(r)
 
-# get detailed information on section 7
-r <- fac_get_section(sectionid = 7, data = "detailed")
+# retrieves data sections
+r <- fac_get_sections(sectionid = 5, data = "summary")
 content(r)
+
+## retrieves information on a specific section
+r <- fac_get_section(sectionid = -15)
+content(r)
+
+# retrieves information on a specific section
+r <- fac_get_section(sectionid = -15, data = "summary")
+content(r)
+}
 
 }

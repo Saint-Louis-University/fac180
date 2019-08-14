@@ -31,21 +31,27 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get count of faculty classification data
+#' \dontrun{
+#' ## retrieves details regarding faculty classifications values for prescribed faculty
 #' r <- fac_get_faculty_classification_data()
 #' content(r)
 #'
-#' ## get count of faculty classifications
+#' ## retrieves details regarding faculty classifications values for prescribed faculty
+#' r <- fac_get_faculty_classification_data(userlist = "m123456", data = "detailed")
+#' content(r)
+#'
+#' ## retrieves details regarding faculty classifications
 #' r <- fac_get_faculty_classifications()
 #' content(r)
 #'
-#' ## get details on faculty classification class 1
-#' r <- fac_get_faculty_classification_class(facultyclassificationid = 1, data = "detailed")
+#' ## retrieves details regarding faculty classifications
+#' r <- fac_get_faculty_classifications(unitid = 2, data = "detailed")
 #' content(r)
 #'
-#' ## get details on faculty classification class 1
-#' r <- fac_get_faculty_classification_class(facultyclassificationid = 2, data = "detailed")
+#' ## retrieves details regarding a specific faculty classification
+#' r <- fac_get_faculty_classification_class(facultyclassificationid = -2, data = "detailed")
 #' content(r)
+#' }
 #'
 #' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Faculty-Classifications}
 NULL

@@ -31,7 +31,3 @@ Retrieves activity input
 \note{
 API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activity-Input}
 }
-\examples{
-## need some examples
-
-}

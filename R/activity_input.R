@@ -14,9 +14,6 @@
 #'
 #' @return a \code{\link[httr]{response}} object
 #'
-#' @examples
-#' ## need some examples
-#'
 #' @note API documentation \url{https://faculty180.interfolio.com/swagger/ui/#tag/Activity-Input}
 NULL
 

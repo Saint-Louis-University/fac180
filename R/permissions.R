@@ -25,14 +25,25 @@
 #' @return a \code{\link[httr]{response}} object
 #'
 #' @examples
-#' ## get count of users with full admin rights
-#' r <- fac_get_users_permissions(rights = "1")
+#' \dontrun{
+#' ## retrieves a listing of users and basic identifying information for each
+#' r <- fac_get_users_permissions(userlist = "m123456,m789123")
 #' content(r)
 #'
-#' ## get permissions for user "000187846"
+#' ##retrieves a listing of users and basic identifying information for each
 #' # need ask interfolio
-#' #r <- fac_get_user_permissions(userid = "000187846")
+#' #r <- fac_get_user_permissions(userlist = "m123456,m789123", rights = 1)
 #' #content(r)
+#'
+#'## retrieves a listing of users and basic identifying information for each
+#' r <- fac_get_users_permissions(userid = "m123456", data = "detailed")
+#' content(r)
+#'
+#' ## retrieves a listing of users and basic identifying information for each
+#' # need ask interfolio
+#' #r <- fac_get_user_permissions(userid = "m123456", data = "detailed", unitid = 2)
+#' #content(r)
+#' }
 #'
 #' @note API documentation: \url{https://faculty180.interfolio.com/swagger/ui/#tag/Permissions}
 NULL
